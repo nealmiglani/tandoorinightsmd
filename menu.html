@@ -108,20 +108,20 @@
 <body>
 
 <!-- NAV -->
-<nav class="nav scrolled" id="nav">
-  <a href="index.html" class="nav-logo">
-    <img src="extracted/assets/logo-saffron.png" alt="Tandoori Nights — Indian Restaurant Gaithersburg MD" />
-  </a>
-  <ul class="nav-center">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="menu.html" class="active">Menu</a></li>
-    <li><a href="about.html">Our Story</a></li>
-    <li><a href="catering.html">Catering &amp; Events</a></li>
-    <li><a href="visit.html">Visit</a></li>
-  </ul>
-  <div class="nav-cta">
-    <a href="tel:+13019474007" class="nav-phone">301 · 947 · 4007</a>
-    <a href="https://www.toasttab.com/tandoori-nights-106-market-street/v3" class="btn btn-saffron" rel="noopener">Order Online</a>
+<nav class="nav-min scrolled" id="nav">
+  <div class="left">
+    <a href="index.html" class="mark" aria-label="Tandoori Nights, home">
+      <img src="extracted/assets/logo-saffron.png" alt="Tandoori Nights" />
+    </a>
+    <a href="index.html" class="lnk">Home</a>
+    <a href="menu.html" class="lnk active">Menu</a>
+    <a href="about.html" class="lnk">Story</a>
+    <a href="catering.html" class="lnk">Catering</a>
+    <a href="visit.html" class="lnk">Visit</a>
+  </div>
+  <div class="right">
+    <a href="tel:+13019474007" class="tel">301.947.4007</a>
+    <a href="https://www.toasttab.com/tandoori-nights-106-market-street/v3" class="reserve" rel="noopener">Order Online</a>
   </div>
 </nav>
 
@@ -134,31 +134,31 @@
   </div>
 </header>
 
-<!-- STICKY MENU NAV -->
-<nav class="menu-nav" aria-label="Menu sections">
-  <div class="menu-nav-inner">
-    <a href="#soups">Soups &amp; Salads</a>
-    <a href="#appetizers">Appetizers</a>
-    <a href="#tandoor">From the Tandoor</a>
-    <a href="#seafood">Seafood</a>
-    <a href="#chicken">Chicken</a>
-    <a href="#lamb">Lamb &amp; Goat</a>
-    <a href="#vegetable">Vegetarian</a>
-    <a href="#biryani">Rice &amp; Biryani</a>
-    <a href="#breads">Breads</a>
-    <a href="#sides">Sides</a>
-    <a href="#desserts">Desserts</a>
-    <a href="#bar">From the Bar</a>
-  </div>
-</nav>
-
-<!-- KEY -->
-<div class="bg-cream-pale" style="padding: 26px 0; border-bottom: 1px solid rgba(117,59,33,0.18);">
-  <div class="content" style="display: flex; gap: 36px; flex-wrap: wrap; justify-content: center; font-family: 'Inter Tight', sans-serif; font-size: 12px; color: var(--sienna-deep); font-weight: 500;">
-    <span><strong style="color: var(--tandoor); font-weight: 700; margin-right: 6px;">V</strong>vegetarian</span>
-    <span><strong style="color: var(--tandoor); font-weight: 700; margin-right: 6px;">VG</strong>vegan</span>
-    <span><strong style="color: var(--tandoor); font-weight: 700; margin-right: 6px;">GF</strong>gluten free</span>
-    <span><span style="color: var(--bright-red);">●</span> mild · <span style="color: var(--bright-red);">●●</span> medium · <span style="color: var(--bright-red);">●●●</span> hot</span>
+<!-- STICKY MENU NAV + LEGEND (follow scroll under main nav) -->
+<div class="menu-sticky">
+  <nav class="menu-nav" aria-label="Menu sections">
+    <div class="menu-nav-inner">
+      <a href="#soups">Soups &amp; Salads</a>
+      <a href="#appetizers">Appetizers</a>
+      <a href="#tandoor">From the Tandoor</a>
+      <a href="#seafood">Seafood</a>
+      <a href="#chicken">Chicken</a>
+      <a href="#lamb">Lamb &amp; Goat</a>
+      <a href="#vegetable">Vegetarian</a>
+      <a href="#biryani">Rice &amp; Biryani</a>
+      <a href="#breads">Breads</a>
+      <a href="#sides">Sides</a>
+      <a href="#desserts">Desserts</a>
+      <a href="#bar">From the Bar</a>
+    </div>
+  </nav>
+  <div class="menu-key">
+    <div class="content">
+      <span><strong>V</strong>vegetarian</span>
+      <span><strong>VG</strong>vegan</span>
+      <span><strong>GF</strong>gluten free</span>
+      <span><span class="dot">●</span> mild <span class="sep">·</span> <span class="dot">●●</span> medium <span class="sep">·</span> <span class="dot">●●●</span> hot</span>
+    </div>
   </div>
 </div>
 

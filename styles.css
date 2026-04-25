@@ -1569,6 +1569,7 @@ footer.site-footer {
   transition: color 0.3s var(--easing);
 }
 .nav-min a.lnk:hover { color: var(--turmeric); }
+.nav-min a.lnk.active { color: var(--turmeric); }
 .nav-min .tel {
   font-family: 'Instrument Sans', 'Inter Tight', system-ui, sans-serif;
   font-style: normal;

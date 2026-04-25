@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+Disallow: /Page1/
+Disallow: /Page2/
+Disallow: /Page3/
+Disallow: /Page4/
+Disallow: /Page5/
+Disallow: /Page6/
+Disallow: /Page7/
+Disallow: /Page8/
+Disallow: /brand-kit.html
+
+# Allow major crawlers full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /extracted/photos/
+Allow: /extracted/assets/
+
+User-agent: Bingbot
+Allow: /
+
+# Block AI scrapers from training on the brand identity (allow indexing crawlers)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://tandoorinightsmd.com/sitemap.xml

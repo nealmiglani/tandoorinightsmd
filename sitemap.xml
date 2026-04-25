@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://tandoorinightsmd.com/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://tandoorinightsmd.com/extracted/photos/hero.jpg</image:loc>
+      <image:title>Tandoori Nights — fine dining Indian restaurant in Kentlands, Gaithersburg MD</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tandoorinightsmd.com/menu.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://tandoorinightsmd.com/extracted/photos/food2.jpg</image:loc>
+      <image:title>Tandoori Nights menu — tandoor specialties, biryani, curries</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tandoorinightsmd.com/about.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tandoorinightsmd.com/extracted/photos/hero.jpg</image:loc>
+      <image:title>Our story — twenty-five years in Kentlands</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tandoorinightsmd.com/catering.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tandoorinightsmd.com/extracted/photos/food3.jpg</image:loc>
+      <image:title>Indian catering &amp; private events in Gaithersburg, MD</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://tandoorinightsmd.com/visit.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tandoorinightsmd.com/extracted/photos/hero.jpg</image:loc>
+      <image:title>Visit Tandoori Nights — Kentlands, Gaithersburg MD</image:title>
+    </image:image>
+  </url>
+
+</urlset>

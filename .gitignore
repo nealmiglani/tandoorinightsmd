@@ -1,0 +1,25 @@
+.DS_Store
+Thumbs.db
+*.log
+
+# Source PSDs (large, not needed for site)
+Page1/
+Page2/
+Page3/
+Page4/
+Page5/
+Page6/
+Page7/
+Page8/
+
+# Extracted PSD page layers — not used by site, keep only assets/ and photos/
+extracted/pg*.png
+extracted/preview-*.png
+extracted/website-logo.png
+extracted/pattern-tile-test*.png
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~

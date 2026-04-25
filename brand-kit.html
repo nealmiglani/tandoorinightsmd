@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tandoori Nights — Brand Identity System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --tandoor-red: #B5121B;
+    --tandoor-red-deep: #8C0E15;
+    --bright-red: #E2121F;
+    --saffron: #F3881F;
+    --turmeric: #FDB932;
+    --turmeric-pale: #FFC228;
+    --olive: #59582B;
+    --olive-deep: #3F3D1B;
+    --cream: #D5C59B;
+    --cream-pale: #E0D1A8;
+    --gold: #B59A58;
+    --gold-deep: #8B7138;
+    --sienna: #753B21;
+    --sienna-deep: #5C2509;
+    --damask: #DAA4B4;
+    --bone: #F4EAD5;
+    --ink: #1A0E08;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--bone);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─────────── HERO ─────────── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    background: var(--tandoor-red);
+    background-image: url('extracted/assets/pattern-damask-tile.png');
+    background-size: 240px 240px;
+    background-blend-mode: multiply;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    bottom: -2%; right: -2%;
+    width: 22%;
+    height: 28%;
+    background: var(--turmeric);
+    transform: rotate(15deg);
+    z-index: 0;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 25%;
+    background: linear-gradient(180deg, transparent, var(--tandoor-red-deep) 40%, var(--ink));
+    z-index: 1;
+  }
+
+  .hero-redswirl {
+    position: absolute;
+    left: -8%;
+    top: 5%;
+    width: 70%;
+    opacity: 0.35;
+    z-index: 0;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    margin-bottom: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: ""; width: 60px; height: 1px; background: var(--turmeric); opacity: 0.6;
+  }
+
+  .hero-logo {
+    width: clamp(280px, 50vw, 760px);
+    height: auto;
+    filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+  }
+
+  .hero-tag {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(18px, 1.6vw, 26px);
+    color: var(--cream-pale);
+    margin-top: 36px;
+    opacity: 0.9;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 50px;
+    margin-top: 60px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-meta span { opacity: 0.85; }
+  .hero-meta span + span::before { content: "  ·  "; color: var(--turmeric); margin-right: 10px; opacity: 0.5; }
+
+  /* ─────────── SECTIONS ─────────── */
+  section {
+    padding: 120px 80px;
+    position: relative;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 32px;
+  }
+  .section-label::before {
+    content: ""; width: 40px; height: 1px; background: var(--saffron);
+  }
+
+  .section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(40px, 5.5vw, 72px);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  .section-title em { color: var(--saffron); font-style: italic; font-weight: 500; }
+
+  .section-lede {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(18px, 1.5vw, 24px);
+    color: var(--cream-pale);
+    opacity: 0.8;
+    max-width: 720px;
+    margin-bottom: 80px;
+  }
+
+  /* ─────────── PALETTE ─────────── */
+  .palette-section {
+    background: linear-gradient(180deg, var(--ink) 0%, #2a1810 100%);
+  }
+
+  .palette-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .swatch {
+    aspect-ratio: 3/4;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .swatch:hover { transform: translateY(-4px); }
+
+  .swatch-large { grid-row: span 2; aspect-ratio: 3/4; }
+
+  .swatch-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .swatch-large .swatch-name { font-size: 36px; }
+
+  .swatch-meta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    opacity: 0.75;
+  }
+
+  .swatch-codes {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    line-height: 1.7;
+    text-transform: uppercase;
+  }
+
+  .palette-secondary {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    margin-top: 2px;
+  }
+  .swatch-sm {
+    aspect-ratio: 1.4;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .swatch-sm strong {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .swatch-sm span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* ─────────── LOGO ─────────── */
+  .logo-section {
+    background: var(--ink);
+    border-top: 1px solid rgba(245, 184, 65, 0.15);
+  }
+
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 60px;
+  }
+
+  .logo-card {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-card.primary {
+    grid-row: span 2;
+    aspect-ratio: 1;
+    background: var(--tandoor-red);
+    background-image: url('extracted/assets/pattern-damask-tile.png');
+    background-size: 200px 200px;
+    background-blend-mode: multiply;
+  }
+  .logo-card.primary::before {
+    content: "";
+    position: absolute;
+    bottom: -10%; right: -10%;
+    width: 50%; height: 50%;
+    background: var(--turmeric);
+    transform: rotate(15deg);
+  }
+  .logo-card.cream { background: var(--cream); }
+  .logo-card.olive { background: var(--olive); }
+  .logo-card.turmeric { background: var(--turmeric); }
+  .logo-card.black { background: var(--ink); border: 1px solid rgba(245,184,65,0.2); }
+
+  .logo-card img {
+    max-width: 75%;
+    max-height: 50%;
+    position: relative;
+    z-index: 1;
+  }
+  .logo-card.primary img { max-width: 70%; }
+
+  .logo-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  .logo-card.primary .logo-caption { color: var(--turmeric); }
+  .logo-card.cream .logo-caption { color: var(--sienna); }
+  .logo-card.olive .logo-caption { color: var(--cream); }
+  .logo-card.turmeric .logo-caption { color: var(--tandoor-red); }
+  .logo-card.black .logo-caption { color: var(--gold); }
+
+  .logo-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(245, 184, 65, 0.2);
+  }
+  .logo-info > div h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .logo-info > div p {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    color: var(--cream-pale);
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
+  /* ─────────── TYPOGRAPHY ─────────── */
+  .type-section {
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .type-section .section-label { color: var(--tandoor-red); }
+  .type-section .section-label::before { background: var(--tandoor-red); }
+  .type-section .section-title { color: var(--ink); }
+  .type-section .section-title em { color: var(--tandoor-red); }
+  .type-section .section-lede { color: var(--sienna-deep); opacity: 0.75; }
+
+  .type-block {
+    border-top: 1px solid rgba(117, 59, 33, 0.25);
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .type-block:last-child { border-bottom: 1px solid rgba(117, 59, 33, 0.25); }
+
+  .type-meta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--olive);
+  }
+  .type-meta strong {
+    display: block;
+    color: var(--tandoor-red);
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .type-meta p {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--sienna-deep);
+    margin-top: 16px;
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+
+  .type-display {
+    text-align: left;
+  }
+  .type-display img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+
+  .type-headline-section {
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: var(--olive);
+  }
+  .type-headline-section .echo {
+    display: block;
+    font-size: 0.4em;
+    letter-spacing: 0.5em;
+    color: var(--saffron);
+    margin-top: 8px;
+  }
+
+  .type-body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: 640px;
+  }
+  .type-body strong { color: var(--tandoor-red); font-weight: 600; }
+
+  .type-spec {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    flex-wrap: wrap;
+  }
+
+  /* ─────────── ORNAMENTS ─────────── */
+  .ornaments-section {
+    background: var(--ink);
+    border-top: 1px solid rgba(245, 184, 65, 0.15);
+  }
+
+  .ornament-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .ornament-card {
+    aspect-ratio: 1;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ornament-card.cream { background: var(--cream); }
+  .ornament-card.red {
+    background: var(--tandoor-red);
+    background-image: url('extracted/assets/pattern-damask-tile.png');
+    background-size: 180px 180px;
+    background-blend-mode: multiply;
+  }
+  .ornament-card.olive { background: var(--olive); }
+  .ornament-card.turmeric { background: var(--turmeric); }
+  .ornament-card.large {
+    grid-column: span 2;
+    aspect-ratio: 2;
+  }
+
+  .ornament-card img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+
+  .ornament-card .label {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+  }
+  .ornament-card.cream .label { color: var(--sienna); }
+  .ornament-card.red .label { color: var(--turmeric); }
+  .ornament-card.olive .label { color: var(--cream); }
+  .ornament-card.turmeric .label { color: var(--tandoor-red); }
+
+  /* ─────────── VOICE ─────────── */
+  .voice-section {
+    background: var(--olive-deep);
+    border-top: 1px solid rgba(245, 184, 65, 0.15);
+  }
+
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .voice-card {
+    border: 1px solid rgba(245, 184, 65, 0.25);
+    padding: 50px;
+    position: relative;
+    background: rgba(0,0,0,0.2);
+  }
+
+  .voice-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: var(--saffron);
+    margin-bottom: 20px;
+  }
+  .voice-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 32px;
+    font-style: italic;
+    margin-bottom: 16px;
+    color: var(--bone);
+  }
+  .voice-quote {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--turmeric);
+    line-height: 1.4;
+    margin: 24px 0;
+    padding-left: 20px;
+    border-left: 2px solid var(--saffron);
+  }
+  .voice-attrs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .voice-attrs span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold-deep);
+    padding: 6px 12px;
+  }
+
+  /* ─────────── APPLICATION ─────────── */
+  .app-section {
+    background: var(--ink);
+    border-top: 1px solid rgba(245, 184, 65, 0.15);
+  }
+
+  .app-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  /* Sample menu cover */
+  .menu-cover {
+    aspect-ratio: 5/7;
+    background: var(--tandoor-red);
+    background-image: url('extracted/assets/pattern-damask-tile.png');
+    background-size: 200px 200px;
+    background-blend-mode: multiply;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  .menu-cover::before {
+    content: "";
+    position: absolute;
+    bottom: 0; right: -5%;
+    width: 25%; height: 30%;
+    background: var(--turmeric);
+    transform: rotate(15deg);
+  }
+  .menu-cover::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 18%;
+    background: var(--tandoor-red-deep);
+  }
+  .menu-cover-swirl {
+    position: absolute;
+    left: -10%; top: 5%;
+    width: 75%;
+    opacity: 0.3;
+    z-index: 1;
+  }
+  .menu-cover-logo {
+    width: 60%;
+    z-index: 2;
+    filter: drop-shadow(0 2px 12px rgba(0,0,0,0.25));
+  }
+  .menu-cover-tag {
+    position: absolute;
+    bottom: 7%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    z-index: 2;
+  }
+
+  /* Sample menu page */
+  .menu-page {
+    aspect-ratio: 5/7;
+    background: var(--cream);
+    color: var(--ink);
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-page-frame {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 12%;
+    background: var(--gold);
+  }
+  .menu-page-swirl {
+    position: absolute;
+    left: -2%;
+    top: 8%;
+    width: 28%;
+    z-index: 1;
+  }
+  .menu-page-content {
+    margin-left: 18%;
+    z-index: 2;
+    position: relative;
+  }
+  .menu-page h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 36px;
+    color: var(--olive);
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+  .menu-page .echo {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    color: var(--saffron);
+    letter-spacing: 0.6em;
+    text-transform: lowercase;
+    margin-bottom: 24px;
+  }
+  .menu-page .item {
+    margin-bottom: 14px;
+  }
+  .menu-page .item-name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--saffron);
+    margin-bottom: 2px;
+  }
+  .menu-page .item-desc {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* Photo gallery */
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: span 2;
+    gap: 2px;
+    margin-top: 30px;
+  }
+  .photo {
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .photo::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 16px; left: 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--bone);
+    background: rgba(10,6,4,0.7);
+    padding: 6px 10px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ─────────── CONTACT ─────────── */
+  .contact-section {
+    background: var(--turmeric);
+    color: var(--ink);
+    padding: 100px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 35%;
+    background: var(--tandoor-red);
+    background-image: url('extracted/assets/pattern-damask-tile.png');
+    background-size: 180px 180px;
+    background-blend-mode: multiply;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+  }
+
+  .contact-logo {
+    width: 80%;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.3));
+  }
+
+  .contact-info h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .contact-info h3 em { color: var(--tandoor-red); font-style: italic; }
+  .contact-info .sub {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--sienna-deep);
+    margin-bottom: 32px;
+  }
+  .contact-info .row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .contact-info .row strong {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--tandoor-red);
+    min-width: 100px;
+    font-weight: 700;
+  }
+
+  /* ─────────── FOOTER ─────────── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid var(--gold-deep);
+    padding: 60px 80px;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+  footer img {
+    width: 200px;
+    margin-bottom: 24px;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 1100px) {
+    section { padding: 80px 32px; }
+    .palette-grid { grid-template-columns: 1fr 1fr; }
+    .palette-secondary { grid-template-columns: repeat(3, 1fr); }
+    .logo-grid { grid-template-columns: 1fr 1fr; }
+    .ornament-grid { grid-template-columns: 1fr 1fr; }
+    .voice-grid, .app-grid, .contact-grid { grid-template-columns: 1fr; }
+    .photos { grid-column: span 1; grid-template-columns: 1fr 1fr; }
+    .type-block { grid-template-columns: 1fr; gap: 24px; }
+    .logo-info { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="extracted/assets/ornament-redswirl.png" class="hero-redswirl" alt="" />
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Brand Identity System</div>
+    <img src="extracted/assets/logo-saffron.png" alt="Tandoori Nights" class="hero-logo" />
+    <p class="hero-tag">Fine Dining Indian Cuisine — Gaithersburg, Maryland</p>
+    <div class="hero-meta">
+      <span>Established 2002</span>
+      <span>Tandoor · Spice · Saffron</span>
+      <span>tandoorinightsmd.com</span>
+    </div>
+  </div>
+</section>
+
+<!-- PALETTE -->
+<section class="palette-section">
+  <div class="section-label">Chapter One — The Palette</div>
+  <h2 class="section-title">Sampled from <em>the artwork itself.</em></h2>
+  <p class="section-lede">Every color in this system was eye-droppered straight from the existing menu PSDs and the restaurant's identity — the deep tandoor red, the saffron of the wordmark, the olive of the section heads, the cream and antique gold of the bar page.</p>
+
+  <div class="palette-grid">
+    <div class="swatch swatch-large" style="background: #B5121B; color: var(--turmeric);">
+      <div>
+        <div class="swatch-name">Tandoor Red</div>
+        <div class="swatch-meta">Primary · Heritage</div>
+      </div>
+      <div class="swatch-codes">
+        HEX  #B5121B<br/>
+        RGB  181 · 18 · 27<br/>
+        CMYK 18 · 100 · 100 · 11<br/>
+        PMS  186 C
+      </div>
+    </div>
+
+    <div class="swatch" style="background: #F3881F; color: var(--ink);">
+      <div>
+        <div class="swatch-name">Saffron</div>
+        <div class="swatch-meta">Logo Color</div>
+      </div>
+      <div class="swatch-codes">#F3881F<br/>PMS 1495 C</div>
+    </div>
+
+    <div class="swatch" style="background: #FDB932; color: var(--ink);">
+      <div>
+        <div class="swatch-name">Turmeric</div>
+        <div class="swatch-meta">Highlight</div>
+      </div>
+      <div class="swatch-codes">#FDB932<br/>PMS 1235 C</div>
+    </div>
+
+    <div class="swatch" style="background: #E2121F; color: var(--turmeric);">
+      <div>
+        <div class="swatch-name">Bright Red</div>
+        <div class="swatch-meta">Pop · Signage</div>
+      </div>
+      <div class="swatch-codes">#E2121F<br/>PMS 185 C</div>
+    </div>
+
+    <div class="swatch" style="background: #59582B; color: var(--cream);">
+      <div>
+        <div class="swatch-name">Olive Green</div>
+        <div class="swatch-meta">Section Heads</div>
+      </div>
+      <div class="swatch-codes">#59582B<br/>PMS 5757 C</div>
+    </div>
+
+    <div class="swatch" style="background: #D5C59B; color: var(--sienna-deep);">
+      <div>
+        <div class="swatch-name">Cream</div>
+        <div class="swatch-meta">Linen · Paper</div>
+      </div>
+      <div class="swatch-codes">#D5C59B<br/>PMS 7501 C</div>
+    </div>
+
+    <div class="swatch" style="background: #B59A58; color: var(--ink);">
+      <div>
+        <div class="swatch-name">Antique Gold</div>
+        <div class="swatch-meta">Frame · Filigree</div>
+      </div>
+      <div class="swatch-codes">#B59A58<br/>PMS 871 C</div>
+    </div>
+  </div>
+
+  <div class="palette-secondary">
+    <div class="swatch-sm" style="background: #8C0E15; color: var(--turmeric);"><strong>Deep Tandoor</strong><span>#8C0E15</span></div>
+    <div class="swatch-sm" style="background: #753B21; color: var(--cream);"><strong>Burnt Sienna</strong><span>#753B21</span></div>
+    <div class="swatch-sm" style="background: #5C2509; color: var(--cream);"><strong>Smoked Mahogany</strong><span>#5C2509</span></div>
+    <div class="swatch-sm" style="background: #3F3D1B; color: var(--cream);"><strong>Cardamom</strong><span>#3F3D1B</span></div>
+    <div class="swatch-sm" style="background: #DAA4B4; color: var(--ink);"><strong>Damask Rose</strong><span>#DAA4B4</span></div>
+    <div class="swatch-sm" style="background: #E0D1A8; color: var(--ink);"><strong>Pale Cream</strong><span>#E0D1A8</span></div>
+  </div>
+</section>
+
+<!-- LOGO -->
+<section class="logo-section">
+  <div class="section-label">Chapter Two — The Wordmark</div>
+  <h2 class="section-title">A custom hand-cut <em>display lettering.</em></h2>
+  <p class="section-lede">The TANDOORI NIGHTS wordmark is a tribal-cut display face — jagged terminals, irregular cap heights, almost like cloth torn against a hot tandoor. Use it large; never letter-spaced; never modified.</p>
+
+  <div class="logo-grid">
+    <div class="logo-card primary">
+      <img src="extracted/assets/logo-saffron.png" alt="Primary lockup on red" />
+      <div class="logo-caption">01 · Primary on Red</div>
+    </div>
+
+    <div class="logo-card cream">
+      <img src="extracted/assets/logo-redfill.png" alt="Red on cream" />
+      <div class="logo-caption">02 · Red on Cream</div>
+    </div>
+
+    <div class="logo-card olive">
+      <img src="extracted/assets/logo-saffron.png" alt="Saffron on olive" />
+      <div class="logo-caption">03 · Saffron on Olive</div>
+    </div>
+
+    <div class="logo-card turmeric">
+      <img src="extracted/assets/logo-redfill.png" alt="Red on turmeric" />
+      <div class="logo-caption">04 · Red on Turmeric</div>
+    </div>
+
+    <div class="logo-card black">
+      <img src="extracted/assets/logo-saffron.png" alt="Saffron on black" />
+      <div class="logo-caption">05 · Saffron on Black</div>
+    </div>
+  </div>
+
+  <div class="logo-info">
+    <div>
+      <h4>Clear Space</h4>
+      <p>Always preserve clear space equal to the cap height of the "T" on every side. Never crowd the mark with type, photography, or other graphics.</p>
+    </div>
+    <div>
+      <h4>Minimum Size</h4>
+      <p>Digital — 120px wide. Print — 1.25 inches wide. Below this size, switch to the simplified "TN" monogram (in development).</p>
+    </div>
+    <div>
+      <h4>Don't</h4>
+      <p>Don't outline, drop-shadow (except subtle on photo), recolor outside this system, condense, italicize, or rebuild in another typeface. The lettering is custom.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section class="type-section">
+  <div class="section-label">Chapter Three — Typography</div>
+  <h2 class="section-title">Three voices, <em>one table.</em></h2>
+  <p class="section-lede">A custom display for the marquee, a wide-tracked humanist sans for section heads (echoed in saffron lowercase), and a clean book sans for the menu body. EB Garamond carries the long-form copy on the website side.</p>
+
+  <div class="type-block">
+    <div class="type-meta">
+      <strong>Display</strong>
+      Custom Hand-Cut<br/>
+      Lettering · Tribal · Cap-Only
+      <p>The TANDOORI NIGHTS wordmark. A torn-paper, jagged-terminal display alphabet. Not used outside the lockup itself.</p>
+    </div>
+    <div class="type-display">
+      <img src="extracted/assets/logo-redfill.png" alt="Display lettering specimen" />
+      <div class="type-spec">
+        <span>Use: Logo Lockup Only</span>
+        <span>Color: Saffron / Red / Cream</span>
+        <span>Never re-typeset</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-meta">
+      <strong>Section Heads</strong>
+      Open Sans Light<br/>
+      Sans · Wide-Tracked · Lowercase
+      <p>For chapter titles like "salads" and "from our bar". Set in olive at 56px, with a saffron echo in spaced lowercase beneath.</p>
+    </div>
+    <div>
+      <div class="type-headline-section">
+        from the tandoor
+        <span class="echo">f r o m   t h e   t a n d o o r</span>
+      </div>
+      <div class="type-spec">
+        <span>Weight: 300 Light</span>
+        <span>Tracking: +20</span>
+        <span>Echo: +600 in Saffron</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-meta">
+      <strong>Body & Items</strong>
+      Open Sans / Myriad Pro<br/>
+      Humanist Sans · Book
+      <p>For dish names, descriptions, prices, and all reading copy. Dish names: Saffron Bold. Body: Ink Regular. Always set 1.6 leading.</p>
+    </div>
+    <div>
+      <div class="type-body">
+        <strong>Tandoori Chicken · $17.99 Full / 11.99 Half</strong><br/>
+        Chicken marinated in yogurt and freshly ground spices. Skewered and grilled to your order in our traditional clay tandoor — sealing in the natural juices and the perfume of cardamom, ginger, and lime.
+      </div>
+      <div class="type-spec">
+        <span>Weights: 300 / 400 / 600 / 700</span>
+        <span>Body 16px · Lead 1.6</span>
+        <span>Use: Menus · Web · Print</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-meta">
+      <strong>Editorial</strong>
+      EB Garamond / Adobe Garamond Pro<br/>
+      Serif · Italic
+      <p>The website's book serif. Used for taglines, pull quotes, and long-form storytelling — the chef's note, the tasting menu blurb, the press wall.</p>
+    </div>
+    <div>
+      <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(28px, 4vw, 48px); line-height: 1.2; color: var(--ink);">
+        "Best Indian Food in Gaithersburg, MD."
+      </div>
+      <div class="type-spec">
+        <span>Weight: 400 / 500 / Italic</span>
+        <span>Use: Taglines · Pull Quotes</span>
+        <span>Site: Adobe Garamond Pro</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-meta">
+      <strong>Detail</strong>
+      Barlow Condensed / DIN Condensed<br/>
+      Condensed Sans · ALL CAPS
+      <p>For micro-labels, navigation, addresses, hours, and signage details. Never below 10px. Always tracked +0.3em or wider.</p>
+    </div>
+    <div>
+      <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 18px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--olive); font-weight: 500;">
+        106 Market St · Gaithersburg, MD 20878 · 301 · 947 · 4007
+      </div>
+      <div class="type-spec">
+        <span>Weights: 300 / 500 / 700</span>
+        <span>Tracking: 0.3em – 0.6em</span>
+        <span>Use: Labels · UI · Signage</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORNAMENTS -->
+<section class="ornaments-section">
+  <div class="section-label">Chapter Four — Ornaments & Pattern</div>
+  <h2 class="section-title">A library of <em>flourishes.</em></h2>
+  <p class="section-lede">The system carries five repeating ornamental assets — pulled directly from the existing menu PSDs as transparent vectors. Use them at scale, behind type, off the edge of the page.</p>
+
+  <div class="ornament-grid">
+    <div class="ornament-card cream">
+      <img src="extracted/assets/ornament-brownswirl.png" alt="Brown swirl" />
+      <div class="label">01 · Henna Vine — Sienna</div>
+    </div>
+    <div class="ornament-card red large">
+      <img src="extracted/assets/ornament-redswirl.png" alt="Red swirl" />
+      <div class="label">02 · Tandoor Smoke Curls</div>
+    </div>
+    <div class="ornament-card olive">
+      <img src="extracted/assets/ornament-leaf-flourish.png" alt="Leaf flourish" />
+      <div class="label">03 · Indian Leaf Flourish</div>
+    </div>
+    <div class="ornament-card turmeric">
+      <img src="extracted/assets/ornament-gold-frame.png" alt="Gold frame curve" style="max-height: 100%; max-width: 50%; object-fit: contain;"/>
+      <div class="label">04 · Gold Page Curve</div>
+    </div>
+    <div class="ornament-card cream large" style="background-image: url('extracted/assets/pattern-damask-tile.png'); background-size: 200px 200px; background-color: var(--cream); background-blend-mode: multiply;">
+      <div class="label">05 · Damask Diamond — Repeating Pattern</div>
+    </div>
+    <div class="ornament-card red">
+      <img src="extracted/assets/pattern-damask-tile.png" alt="Damask single" style="max-width: 100%; mix-blend-mode: multiply; opacity: 0.7;"/>
+      <div class="label">06 · Damask Single Tile</div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="voice-section">
+  <div class="section-label">Chapter Five — Voice</div>
+  <h2 class="section-title">How we speak, <em>how we don't.</em></h2>
+  <p class="section-lede">Tandoori Nights is upscale-but-warm — the contemporary Indian restaurant that knows its grandmother's recipes by heart. Generous, modern, never stiff, and never trying too hard.</p>
+
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-num">01 · WE ARE</div>
+      <div class="voice-title">Warm. Modern. Quietly Confident.</div>
+      <div class="voice-quote">"Tandoori Nights is an upscale contemporary restaurant serving authentic Indian cuisine in a modern setting. We emphasize healthy, quality food using less oil and all-natural ingredients."</div>
+      <div class="voice-attrs">
+        <span>Hospitable</span><span>Authentic</span><span>Contemporary</span><span>Less Oil</span><span>All-Natural</span><span>Catering</span>
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-num">02 · WE ARE NOT</div>
+      <div class="voice-title">Loud. Generic. Curry-House Cliché.</div>
+      <div class="voice-quote">"SPICY CURRY THAT SLAPS!! Buy 1 get 1 FREE on tikka masala 🔥🔥🔥 #FoodieLife"</div>
+      <div class="voice-attrs">
+        <span>No Slang</span><span>No Hype</span><span>No Coupons in Body</span><span>No Stock Photography</span><span>No Shouting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION -->
+<section class="app-section">
+  <div class="section-label">Chapter Six — In The World</div>
+  <h2 class="section-title">From menu cover <em>to dining room.</em></h2>
+  <p class="section-lede">The system in motion — a menu cover rebuilt with the real lockup and pattern, a sample interior page in the proper grid, and three photographs from the live restaurant gallery.</p>
+
+  <div class="app-grid">
+    <div class="menu-cover">
+      <img src="extracted/assets/ornament-redswirl.png" class="menu-cover-swirl" alt=""/>
+      <img src="extracted/assets/logo-saffron.png" class="menu-cover-logo" alt="Tandoori Nights" />
+      <div class="menu-cover-tag">Fine Dining Indian Cuisine</div>
+    </div>
+
+    <div class="menu-page">
+      <div class="menu-page-frame"></div>
+      <img src="extracted/assets/ornament-brownswirl.png" class="menu-page-swirl" alt=""/>
+      <div class="menu-page-content">
+        <h2>from the tandoor</h2>
+        <div class="echo">f r o m   t h e   t a n d o o r</div>
+        <div class="item">
+          <div class="item-name">Tandoori Chicken · $17.99 Full / 11.99 Half</div>
+          <div class="item-desc">Chicken marinated in yogurt and freshly ground spices. Skewered and grilled to your order in the clay oven.</div>
+        </div>
+        <div class="item">
+          <div class="item-name">Lamb Chops · $22.99</div>
+          <div class="item-desc">Tender lamb chops marinated with ginger, herbs, and freshly ground spices. Grilled in the clay oven.</div>
+        </div>
+        <div class="item">
+          <div class="item-name">Prawn Anzarey · $21.99</div>
+          <div class="item-desc">Large juicy prawns marinated and grilled in the clay oven.</div>
+        </div>
+        <div class="item">
+          <div class="item-name">Tandoori Seafood Platter · $24.99</div>
+          <div class="item-desc">Marinated pieces of shrimp, salmon, and scallops, grilled to perfection in the clay oven.</div>
+        </div>
+        <div class="item">
+          <div class="item-name">Malai Kabob · $14.99</div>
+          <div class="item-desc">Tender boneless cubes of chicken breast in yogurt, cream cheese, fresh ginger, and mild spices.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="photos">
+      <div class="photo" style="background-image: url('extracted/photos/hero.jpg');" data-label="Dining Room"></div>
+      <div class="photo" style="background-image: url('extracted/photos/food1.jpg');" data-label="Pani Puri"></div>
+      <div class="photo" style="background-image: url('extracted/photos/food2.jpg');" data-label="From the Tandoor"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="contact-grid">
+    <div>
+      <img src="extracted/assets/logo-saffron.png" class="contact-logo" alt="Tandoori Nights" />
+    </div>
+    <div class="contact-info">
+      <h3>Visit <em>the tandoor.</em></h3>
+      <p class="sub">Lunch, dinner, late dinner — seven days a week.</p>
+      <div class="row"><strong>Address</strong>106 Market Street, Gaithersburg, MD 20878</div>
+      <div class="row"><strong>Telephone</strong>301 · 947 · 4007</div>
+      <div class="row"><strong>Mon — Fri</strong>11:30am – 2:30pm  ·  4:30pm – 10:00pm</div>
+      <div class="row"><strong>Sat — Sun</strong>11:30am – 10:00pm</div>
+      <div class="row"><strong>Online</strong>tandoorinightsmd.com  ·  @tandoorinights</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="extracted/assets/logo-saffron.png" alt="Tandoori Nights" />
+  <div>Tandoori Nights · Brand Identity System · MMXXVI · Gaithersburg · Maryland</div>
+</footer>
+
+</body>
+</html>
